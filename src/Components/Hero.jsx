@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <div className="flex flex-col-reverse grow items-center sm:flex-row sm:justify-center sm:items-end">
       <div className="flex flex-col max-w-[500px] justify-center items-center sm:items-start">
-        <h3 className="hidden sm:block font-extrabold text-5xl text-center m-5">
+        <h3 className="hidden sm:block font-extrabold text-5xl m-5">
           Make <br /> Remote Work
         </h3>
         <h3 className="block sm:hidden font-extrabold text-5xl text-center m-5">
@@ -29,7 +29,7 @@ const Hero = () => {
         >
           Learn More
         </button>
-        <div className="flex min-w-full justify-center m-5">
+        <div className="flex sm:min-w-full justify-center">
           {footerimg.map((img, index) => (
             <img
               src={img.img}
