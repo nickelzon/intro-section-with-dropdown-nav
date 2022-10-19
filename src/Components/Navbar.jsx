@@ -24,13 +24,13 @@ const Navbar = () => {
           {menu.map((menu, index) => (
             <div
               key={menu.name}
-              className={`flex items-start cursor-pointer hover:text-indigo-600 ${
+              className={`flex items-start cursor-pointer ${
                 index === menu.length - 1 ? "mr-0" : "mr-4"
               }`}
               onClick={() => toggleList((prev) => !prev)}
             >
               <div className="flex flex-col">
-                <div className="flex items-center">
+                <div className="flex items-center hover:text-indigo-600">
                   {menu.name}
                   <img
                     src={!list ? menu.icon : menu.icon2}
@@ -94,17 +94,17 @@ const Navbar = () => {
         >
           {menu.map((menu, index) => (
             <div
-              className={`flex items-center cursor-pointer hover:text-indigo-600 ${
+              className={`flex items-center cursor-pointer ${
                 index === menu.length - 1 ? "mb-0" : "mb-4"
               }`}
-              onClick={() => toggleList((prev) => !prev)}
             >
               <div className="flex flex-col">
-                <div className="flex items-center">
+                <div className="flex items-center hover:text-indigo-600 ">
                   {menu.name}
                   <img
                     src={!list ? menu.icon : menu.icon2}
                     className="ml-1 max-h-2"
+                    onClick={() => toggleList((prev) => !prev)}
                   />
                 </div>
                 <ul
@@ -126,7 +126,7 @@ const Navbar = () => {
                           content.icon === undefined ? "mr-0" : "mr-2"
                         }`}
                       />
-                      {content.description}
+                      <a href={content.link}>{content.description}</a>
                     </li>
                   ))}
                 </ul>
