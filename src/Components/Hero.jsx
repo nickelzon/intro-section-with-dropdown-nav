@@ -1,18 +1,11 @@
 import React from "react";
 import { footerimg } from "../Constants";
-import {
-  herodesktop,
-  heromobile,
-  clientaudiophile,
-  clientdatabiz,
-  clientmaker,
-  clientmeet,
-} from "../images";
+import { herodesktop, heromobile } from "../images";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col-reverse grow items-center sm:flex-row sm:justify-center sm:items-end">
-      <div className="flex flex-col max-w-[500px] justify-center items-center sm:items-start">
+    <div className="flex flex-col-reverse grow h-[100vh] items-center sm:flex-row sm:justify-center">
+      <div className="flex flex-col justify-center items-center sm:items-start">
         <h3 className="hidden sm:block font-extrabold text-5xl m-5">
           Make <br /> Remote Work
         </h3>
@@ -42,7 +35,16 @@ const Hero = () => {
         </div>
       </div>
       <div>
-        <img src={herodesktop} alt="desktop" className="max-h-[500px]" />
+        <img
+          src={herodesktop}
+          alt="desktop"
+          className="hidden ss:block max-h-[500px]"
+        />
+        <img
+          src={heromobile}
+          alt="desktop"
+          className="block ss:hidden max-h-[500px]"
+        />
       </div>
     </div>
   );

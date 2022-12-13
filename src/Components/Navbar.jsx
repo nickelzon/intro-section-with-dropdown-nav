@@ -68,6 +68,7 @@ const Navbar = () => {
         <div className="buttons">
           {buttons.map((btn, index) => (
             <button
+              key={index}
               className={`${
                 index === buttons.length - 1 ? "mr-0" : "mr-5"
               } border-[1px] border-black rounded-xl p-1 hover:bg-slate-300`}
@@ -90,10 +91,11 @@ const Navbar = () => {
         <div
           className={`${
             !togglemenu ? "hidden" : "flex"
-          } flex-col absolute top-0 right-0 min-w-[40%] items-start bg-slate-50 min-h-full p-6 py-[5rem] sidebar`}
+          } flex-col absolute top-0 right-0 bottom-0 min-w-[40%] items-start bg-slate-50 p-6 py-[5rem] sidebar`}
         >
           {menu.map((menu, index) => (
             <div
+              key={index}
               className={`flex items-center cursor-pointer ${
                 index === menu.length - 1 ? "mb-0" : "mb-4"
               }`}
