@@ -12,6 +12,35 @@
   animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+nav {
+  grid-template-columns: 1fr 7fr;
+}
+
+button {
+  transition: all 300ms ease-in;
+}
+
+.hero {
+  grid-template-columns: 1fr 2fr;
+}
+
+.hero > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+
+@media screen and (max-width: 620px) {
+  nav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  nav > .menu {
+    justify-self: flex-end;
+  }
+}
+
 @-webkit-keyframes slide-right {
   0% {
     -webkit-transform: translateX(100px);
