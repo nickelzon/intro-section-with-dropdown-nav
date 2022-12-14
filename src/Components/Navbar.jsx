@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { toggleContext } from "../App";
 import {
   logo,
@@ -9,15 +9,20 @@ import {
 } from "../images";
 import { menu, buttons } from "../Constants";
 
-const Menu = ({ menu }) => {
+export const Menu = ({ menu, flexFlow, itemsCenter, margin, noMargin }) => {
   const style = {
-    mainContainer: "flex items-center",
+    mainContainer: `flex ${flexFlow} ${itemsCenter} menu-content`,
   };
 
   return (
     <div className={style.mainContainer}>
       {menu.map((m, i) => (
-        <span key={i} className={i === menu.length - 1 ? "mr-0" : "mr-2"}>
+        <span
+          key={i}
+          className={`${i === menu.length - 1 ? noMargin : margin} ${
+            i < 2 ? "after:content-['>']" : ""
+          } relative`}
+        >
           {m.name}
         </span>
       ))}
@@ -48,8 +53,6 @@ const Buttons = ({ buttons }) => {
 
 const Navbar = () => {
   const toggle = useContext(toggleContext);
-  const [togglemenu, setToggle] = useState(false);
-  const [list, toggleList] = useState(false);
   const style = {
     nav: "grid p-[1.5rem] items-center bg-slate-100 select-none",
     contentContainer: "hidden ss:flex justify-between grow",
@@ -59,13 +62,18 @@ const Navbar = () => {
     <nav className={style.nav}>
       <img src={logo} alt="logo" className="max-h-[20px]" />
       <div className={style.contentContainer}>
-        <Menu menu={menu} />
+        <Menu
+          menu={menu}
+          margin="mr-7"
+          noMargin="mr-0"
+          itemsCenter="items-center"
+        />
         <Buttons buttons={buttons} />
       </div>
       <img
-        src={!togglemenu ? iconmenu : iconclose}
+        src={!toggle.toggleMenu ? iconmenu : iconclose}
         alt="menumobile"
-        onClick={() => setToggle((prev) => !prev)}
+        onClick={() => toggle.setToggle()}
         className="menu ss:hidden"
       />
     </nav>

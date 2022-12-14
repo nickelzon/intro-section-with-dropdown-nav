@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { toggleContext } from "../App";
+import { Menu } from "./Navbar";
+import { menu } from "../Constants";
 import { footerimg } from "../Constants";
 import { herodesktop, heromobile } from "../images";
 
 const Hero = () => {
+  const toggle = useContext(toggleContext);
+
   const style = {
-    rootContainer: "grid h-full border-2",
+    rootContainer: "hero grid h-[100vh]",
   };
 
   return (
-    <div className={style.rootContainer}>
+    <div
+      className={`${style.rootContainer} ${
+        toggle.toggleMenu ? "sidebar-active" : ""
+      }`}
+    >
       <div>
-        <span>Box 1</span>
+        <span>Hero</span>
       </div>
-      <div>
-        <span>Box 2</span>
+      <div
+        className={`${!toggle.toggleMenu ? "hidden" : "flex"} bg-slate-100 p-5`}
+      >
+        <Menu menu={menu} flexFlow="flex-col" margin="mb-7" noMargin="mb-0" />
       </div>
     </div>
   );

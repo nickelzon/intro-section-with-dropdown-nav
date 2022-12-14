@@ -17,14 +17,14 @@ const App = () => {
   return (
     <div className="font-font bg-slate-50">
       <div className="root-container w-full">
-        <div>
-          <toggleContext.Provider value={iconToggle}>
+        <toggleContext.Provider value={iconToggle}>
+          <div>
             <Navbar />
-          </toggleContext.Provider>
-        </div>
-        <div className="h-[100vh]">
-          <Hero />
-        </div>
+          </div>
+          <div>
+            <Hero />
+          </div>
+        </toggleContext.Provider>
       </div>
     </div>
   );
