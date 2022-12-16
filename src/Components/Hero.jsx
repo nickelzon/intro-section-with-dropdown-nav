@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { toggleContext } from "../App";
 import { Menu } from "./Navbar";
 import { menu } from "../Constants";
+import { Alert } from "./Alert";
 import { footerimg } from "../Constants";
 import { herodesktop, heromobile } from "../images";
 
 const Hero = () => {
   const toggle = useContext(toggleContext);
-
   const style = {
     rootContainer: "hero grid h-[100vh]",
   };

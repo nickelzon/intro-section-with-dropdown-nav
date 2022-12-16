@@ -28,6 +28,10 @@ button {
   grid-template-columns: 1fr 2fr;
 }
 
+.alert-background {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .hero > div:first-child {
   display: flex;
   justify-content: center;
