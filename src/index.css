@@ -33,15 +33,23 @@ button {
 }
 
 .hero > div:first-child {
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
   /* border: 1px solid red; */
 }
 
 .hero > div:last-child {
   /* justify-content: center; */
   /* align-items: center; */
+  /* border: 1px solid red; */
+}
+
+.title-and-desc > div {
+  min-width: 25ch;
+  max-width: 35ch;
   /* border: 1px solid red; */
 }
 
