@@ -18,13 +18,17 @@ const App = () => {
 
   return (
     <div className="font-font bg-slate-50">
-      <div className="root-container w-full">
-        <Alert
-          display={alert ? "flex" : "hidden"}
-          position="absolute"
-          z="10"
-          setAlert={() => setAlert((a) => !a)}
-        />
+      <div className={`root-container w-full h-full`}>
+        {alert
+          ? React.createElement(Alert, {
+              display: "flex",
+              position: "fixed",
+              z: "10",
+              setAlert() {
+                setAlert((a) => !a);
+              },
+            })
+          : null}
         <toggleContext.Provider value={iconToggle}>
           <div>
             <Navbar />

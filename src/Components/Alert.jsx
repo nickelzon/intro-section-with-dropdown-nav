@@ -14,7 +14,7 @@ const MessageContainer = ({ message }) => {
 
 export const Alert = ({ display, position, z, setAlert }) => {
   const style = {
-    root: `${display} justify-center items-center h-[100vh] w-full bg-slate-600 ${position} z-${z} top-0 alert-background`,
+    root: `${display} justify-center items-center w-full bg-slate-600 ${position} z-${z} top-0 bottom-0 alert-background`,
   };
   return (
     <div className={style.root} onClick={() => setAlert()}>
