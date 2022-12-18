@@ -35,7 +35,7 @@ const Hero = () => {
         toggle.toggleMenu ? "sidebar-active" : ""
       }`}
     >
-      <div>
+      <div onClick={() => toggle.setToggle()}>
         <TitleAndDesc />
       </div>
       <div
